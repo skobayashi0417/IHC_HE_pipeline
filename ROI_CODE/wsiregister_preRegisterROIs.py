@@ -30,6 +30,8 @@ def prepare_iteration_list(HE_WSIs,IHC_WSIs,IHC_ORDER):
     IHC_STACK = gen_IHC_stack(IHC_WSIs, IHC_ORDER)
     
     newList.append(HE_STACK.pop())
+    print(newList)
+    print(IHC_STACK)
 
     while len(HE_STACK)>0 and len(IHC_STACK)>0:
         if len(newList)%4==0: # there are 4 slide here, so HE, 3 IHCS,... time for next HE
