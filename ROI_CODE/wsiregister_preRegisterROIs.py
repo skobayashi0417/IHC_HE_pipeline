@@ -38,7 +38,7 @@ def prepare_iteration_list(HE_WSIs,IHC_WSIs,IHC_ORDER):
     #        newList.append(HE_STACK.pop())
     #    else:
     #        newList.append(IHC_STACK.pop())
-    while len(IHC_STACK)>0
+    while len(IHC_STACK)>0:
         newList.append(IHC_STACK.pop())
     newList.reverse()
     print(newList)
