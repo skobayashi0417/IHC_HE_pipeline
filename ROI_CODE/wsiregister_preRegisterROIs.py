@@ -33,14 +33,15 @@ def prepare_iteration_list(HE_WSIs,IHC_WSIs,IHC_ORDER):
     print(newList)
     print(IHC_STACK)
 
-    while len(HE_STACK)>0 and len(IHC_STACK)>0:
-        if len(newList)%4==0: # there are 4 slide here, so HE, 3 IHCS,... time for next HE
-            newList.append(HE_STACK.pop())
-        else:
-            newList.append(IHC_STACK.pop())
-    
+    #while len(HE_STACK)>0 and len(IHC_STACK)>0:
+    #    if len(newList)%4==0: # there are 4 slide here, so HE, 3 IHCS,... time for next HE
+    #        newList.append(HE_STACK.pop())
+    #    else:
+    #        newList.append(IHC_STACK.pop())
+    while len(IHC_STACK)>0
+        newList.append(IHC_STACK.pop())
     newList.reverse()
-    
+    print(newList)
     return newList
 
 
