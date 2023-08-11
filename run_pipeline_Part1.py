@@ -6,6 +6,7 @@ import argparse
 sys.path.insert(0,'./ROI_CODE')
 from wsiregister_preRegisterROIs import *
 from generalOverlayCheck_prePostROIs import *
+from generateJSON import *
 
 def prepare_directories(config):
     BASE_DIR = config['directories']['BASE_DIR']
