@@ -5,7 +5,7 @@ sys.path.insert(0,'./1_PatchExtraction')
 sys.path.insert(0,'./2_Inference')
 sys.path.insert(0,'./5_ProbMaps')
 sys.path.insert(0,'./6_mouseModelInference')
-sys.path.insert(0,'./8_combineHE_IHC')
+sys.path.insert(0,'./7_combineHE_IHC')
 from generateJSON import *
 from extractOverlapPatches_ROI import *
 from largerPatchPredictions_ROI import *
