@@ -4,10 +4,15 @@ import torch
 import sys
 import argparse
 sys.path.insert(0,'./ROI_CODE')
-from wsiregister_preRegisterROIs.py import *
+from wsiregister_preRegisterROIs import *
 from generalOverlayCheck_prePostROIs import *
 from ROI_extraction_postRegister import *
 from ROI_extraction_preRegister import *
+
+def prepare_directories(config):
+    BASE_DIR = config['directories']['BASE_DIR']
+    if not os.path.exists(BASE_DIR):
+        os.mkdir(BASE_DIR)
 
 
 def runPipeline_part1(config):
@@ -30,5 +35,7 @@ def runPipeline_part1(config):
 if __name__ == '__main__':
     generate_JSON()
     config = json.load(open('config.json'))
+    
+    prepare_directories(config)
     
     runPipeline_part1(config)
