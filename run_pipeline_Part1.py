@@ -15,7 +15,6 @@ def prepare_directories(config):
 
 
 def runPipeline_part1(config):
-    args = parser.parse_args()
     
     good_qual_reg_samples = ['980']
     bad_qual_reg_samples = ['24']
