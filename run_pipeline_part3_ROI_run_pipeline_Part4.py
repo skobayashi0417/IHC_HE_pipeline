@@ -19,6 +19,7 @@ from getProps_ROI import *
 from LDA_inference_ROI import *
 from sortkMeansClusters import *
 from combine_HE_IHC_Outputs_ROI import *
+from generate_HE_IHC_CSVs_andGraphs import *
 
 def prepare_directories(config):
     INV_UNV_wIHC_BASE_DIR = os.path.join(config['directories']['BASE_DIR'],'INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI')
@@ -83,8 +84,12 @@ def runPipeline(config):
     print('Sorting kMeans Clusters...')
     #sortClusters(config)
     
+     ### Generate IHC HE agg DFs and graphs
+    print('Generating IHC HE agg dataframes and graph Outputs...')
+    IHC_HE_aggregatedDF_graphs_generation(config)
+    
     ### Generate IHC HE Outputs
-    print('Generating visual IHC HE Outputs...')
+    print('Generating visual IHC HE overlay Outputs...')
     combine_HE_IHC_ROI(config)
 
     

@@ -96,7 +96,7 @@ def runPipeline_part3(config):
     
     ### Extract patches from these overlay outputs
     print('Extracting patches from vis Overlays...')
-    extract_OverlayVisPatches_ROI_newDetect_moreMarkers(config)
+    #extract_OverlayVisPatches_ROI_newDetect_moreMarkers(config)
     
     with open('config_part3.json','w') as outfile:
         json.dump(config,outfile)
