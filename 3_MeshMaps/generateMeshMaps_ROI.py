@@ -69,7 +69,7 @@ def createMeshMaps_ROI(config):
     if not os.path.exists(DEST_DIR):
         os.mkdir(DEST_DIR)
         
-    DEST_DIR_WLA = os.path.join(GEN_DEST_DIR, 'meshMaps_ROI_wLA')
+    DEST_DIR_WLA = os.path.join(BASE_DIR, 'meshMaps_ROI_wLA')
     if not os.path.exists(DEST_DIR_WLA):
         os.mkdir(DEST_DIR_WLA)
     
