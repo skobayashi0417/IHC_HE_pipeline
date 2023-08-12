@@ -60,6 +60,10 @@ def runPipeline_part3(config):
     
     ### Generating Mesh Maps
     print('Generating Mesh Maps...')
+    
+    config['directories']['meshPREDICTIONS_DIR_ROI_wLA'] = '/data01/shared/skobayashi/github_test/32pixelPatch_Predictions_ROI_wLA_sepDest'
+    config['directories']['meshPREDICTIONS_DIR_ROI'] = '/data01/shared/skobayashi/github_test/32pixelPatch_Predictions_ROI'
+    
     config = createMeshMaps_ROI(config)
     
     ### Extract Larger Patches
