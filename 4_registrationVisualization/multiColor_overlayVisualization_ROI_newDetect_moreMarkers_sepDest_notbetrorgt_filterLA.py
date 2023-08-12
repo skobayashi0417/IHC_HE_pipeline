@@ -1,4 +1,7 @@
 import os
+import skimage
+from skimage import data, measure, morphology
+from skimage.color import rgb2hed, hed2rgb
 import PIL
 from PIL import Image, ImageOps, ImageEnhance
 import numpy as np
@@ -8,9 +11,6 @@ import pyvips
 import math
 import copy
 import staintools
-import skimage
-from skimage import data, measure, morphology
-from skimage.color import rgb2hed, hed2rgb
 import shutil
 import csv
 import json
