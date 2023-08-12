@@ -244,6 +244,49 @@ def createMeshMaps_ROI(config):
             meshMap_lymphAgg_muscle_bg = np.multiply(meshMap_lymphAgg_muscle_bg,255)
             Image.fromarray(meshMap_lymphAgg_muscle_bg.astype(np.uint8)).save(os.path.join(ROI_DEST_DIR_WLA,saveName))
             
+            meshMap_lymphAgg = np.zeros((im_height,im_width), dtype=int)
+                    
+            for index, row in pred_df.iterrows():
+                topLeftX = int(row['XCoord'])
+                topLeftY = int(row['YCoord'])
+                
+                conf = float(row['conf'])
+                prediction = str(row['pred'])
+                        
+                if conf < 0.5:
+                    next
+                        
+                else:
+                    if prediction=='1':
+                        for i in range(topLeftX,topLeftX+PATCH_SIZE):
+                            for u in range(topLeftY,topLeftY+PATCH_SIZE):
+                                if i<im_width and u<im_height:
+                                    meshMap_lymphAgg[u,i] = 1
+                    elif prediction=='2':
+                        for i in range(topLeftX,topLeftX+PATCH_SIZE):
+                            for u in range(topLeftY,topLeftY+PATCH_SIZE):
+                                if i<im_width and u<im_height:
+                                    meshMap_lymphAgg[u,i] = 1
+                    elif prediction=='3':
+                        for i in range(topLeftX,topLeftX+PATCH_SIZE):
+                            for u in range(topLeftY,topLeftY+PATCH_SIZE):
+                                if i<im_width and u<im_height:
+                                    meshMap_lymphAgg[u,i] = 1
+                    elif prediction=='4':
+                        for i in range(topLeftX,topLeftX+PATCH_SIZE):
+                            for u in range(topLeftY,topLeftY+PATCH_SIZE):
+                                if i<im_width and u<im_height:
+                                    meshMap_lymphAgg[u,i] = 1
+                    elif prediction=='5':
+                        for i in range(topLeftX,topLeftX+PATCH_SIZE):
+                            for u in range(topLeftY,topLeftY+PATCH_SIZE):
+                                if i<im_width and u<im_height:
+                                    meshMap_lymphAgg[u,i] = 0
+                        
+            saveName = 'LAmeshMap_' + str(sample) + '_' + ROI + '.tif'
+            meshMap_lymphAgg = np.multiply(meshMap_lymphAgg,255)
+            Image.fromarray(meshMap_lymphAgg.astype(np.uint8)).save(os.path.join(ROI_DEST_DIR_WLA,saveName))
+            
             ROICOUNTER += 1
         sampleCounter += 1
         

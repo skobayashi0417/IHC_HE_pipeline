@@ -60,7 +60,7 @@ def runPipeline_part3(config):
     
     ### Generating Mesh Maps
     print('Generating Mesh Maps...')
-    #config = createMeshMaps_ROI(config)
+    config = createMeshMaps_ROI(config)
     
     ### Extract Larger Patches
     print('Performing Patch Extraction at Second Level Scale (sf8)...')
