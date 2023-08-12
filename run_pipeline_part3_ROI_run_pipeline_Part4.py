@@ -91,7 +91,7 @@ def runPipeline(config):
 if __name__ == '__main__':
     generate_JSON()
     
-    config = json.load(open('config_part2.json'))
+    config = json.load(open('config_part3.json'))
 
     config = prepare_directories(config)
     

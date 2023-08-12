@@ -81,11 +81,11 @@ def runPipeline_part3(config):
     print('Extracting patches from vis Overlays...')
     extract_OverlayVisPatches_ROI_newDetect_moreMarkers(config)
     
-    with open('config_part2.json','w') as outfile:
+    with open('config_part3.json','w') as outfile:
         json.dump(config,outfile)
 
     
 if __name__ == '__main__':
-    config = json.load(open('./config.json'))
+    config = json.load(open('./config_part2.json'))
     
     runPipeline_part3(config)
