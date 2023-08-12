@@ -1,7 +1,5 @@
-
 import os
 import json
-import torch
 import sys
 sys.path.insert(0,'./0_ScaleWSIs')
 sys.path.insert(0,'./1_PatchExtraction')

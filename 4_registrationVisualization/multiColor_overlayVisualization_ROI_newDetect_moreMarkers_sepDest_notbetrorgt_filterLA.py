@@ -1,6 +1,6 @@
 import os
 import scipy
-#import skimage
+import skimage
 from skimage import data, measure, morphology
 from skimage.color import rgb2hed, hed2rgb
 import PIL
