@@ -34,6 +34,7 @@ def prepare_directories_ROI(config):
 
 def runPipeline_part3(config):
     config = prepare_directories_ROI(config)
+    print(config)
 
     ### Scale HE and registered IHC to sf8
     print('Scaling Registered Images to Second Level Scale (sf8)...')
