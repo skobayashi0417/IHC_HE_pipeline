@@ -2,7 +2,7 @@ import argparse
 from torchvision import transforms
 import time, os, sys, glob, copy
 from time import strftime
-from sklearn.metrics import mean_squared_error, accuracy_score, hamming_loss, roc_curve, auc, f1_score, confusion_matrix
+#from sklearn.metrics import mean_squared_error, accuracy_score, hamming_loss, roc_curve, auc, f1_score, confusion_matrix
 from torch.utils.data import DataLoader, Dataset
 import torchvision.models as models
 import torch.backends.cudnn as cudnn
