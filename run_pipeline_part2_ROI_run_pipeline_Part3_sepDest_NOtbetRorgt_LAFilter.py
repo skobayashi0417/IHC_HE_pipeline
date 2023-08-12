@@ -64,7 +64,7 @@ def runPipeline_part3(config):
     config['directories']['meshPREDICTIONS_DIR_ROI_wLA'] = '/data01/shared/skobayashi/github_test/32pixelPatch_Predictions_ROI_wLA_sepDest'
     config['directories']['meshPREDICTIONS_DIR_ROI'] = '/data01/shared/skobayashi/github_test/32pixelPatch_Predictions_ROI'
     
-    config = createMeshMaps_ROI(config)
+    #config = createMeshMaps_ROI(config)
     
     ### Extract Larger Patches
     print('Performing Patch Extraction at Second Level Scale (sf8)...')
