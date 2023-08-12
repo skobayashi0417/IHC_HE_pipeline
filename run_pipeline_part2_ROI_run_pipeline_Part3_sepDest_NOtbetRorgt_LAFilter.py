@@ -38,41 +38,53 @@ def runPipeline_part3(config):
 
     ### Scale HE and registered IHC to sf8
     print('Scaling Registered Images to Second Level Scale (sf8)...')
-    scale_WSI_secondLevel_ROI(ROI_DIR_POSTREG = config['directories']['ROI_postReg'],
-                              ROI_DIR_PREREG_REGISTERED = config['directories']['preRegROI_registrationOutputs'],
-                              SCALED_ROI_DIR = config['directories']['SCALED_ROI_DIR_SF8'],
-                              IHC_ORDER = config['SlideInfo']['IHC_Order'],
-                              PATCH_SIZE = config['PatchInfo']['PATCH_SIZE_SF8'], #use sf8 patch size as that is final expected scale
-                              WSI_EXTENSION = config['SlideInfo']['WSI_EXTENSION'],
-                              SCALE_FACTOR = 4) #going from sf2 to sf8
+    #scale_WSI_secondLevel_ROI(ROI_DIR_POSTREG = config['directories']['ROI_postReg'],
+    #                          ROI_DIR_PREREG_REGISTERED = config['directories']['preRegROI_registrationOutputs'],
+    #                          SCALED_ROI_DIR = config['directories']['SCALED_ROI_DIR_SF8'],
+    #                          IHC_ORDER = config['SlideInfo']['IHC_Order'],
+    #                          PATCH_SIZE = config['PatchInfo']['PATCH_SIZE_SF8'], #use sf8 patch size as that is final expected scale
+    #                          WSI_EXTENSION = config['SlideInfo']['WSI_EXTENSION'],
+    #                          SCALE_FACTOR = 4) #going from sf2 to sf8
     
     ### Extract patches
     print('Performing Mesh Patch Extraction on Second Level Scale (sf8)...')
-    config = meshpatchExtraction_ROI(config = config)
+    #config = meshpatchExtraction_ROI(config = config)
     
     ### Run Mesh Predictions
     print('Running Mesh Predictions...')
-    config = perform_Meshpredictions_ROI(config = config)
+    #config = perform_Meshpredictions_ROI(config = config)
     
     ### Run Mesh Predictions_wLA
     print('Running Mesh Predictions with LA...')
-    config = perform_Meshpredictions_ROI_wLA_sepDest(config = config)
+    #config = perform_Meshpredictions_ROI_wLA_sepDest(config = config)
     
     ### Generating Mesh Maps
     print('Generating Mesh Maps...')
-    config = createMeshMaps_ROI(config)
+    #config = createMeshMaps_ROI(config)
     
     ### Extract Larger Patches
     print('Performing Patch Extraction at Second Level Scale (sf8)...')
-    config = patchExtraction_ROI(config)
+    #config = patchExtraction_ROI(config)
     
     ### Extract Corresponding Patches at First Scale
     print('Performing Extraction of Corresponding Patches at First Level Scale (sf2)...')
-    config = patchExtraction_firstLevel_ROI(config)
+    #config = patchExtraction_firstLevel_ROI(config)
     
     ### Extracting IHC Patches at Both Scales
     print('Performing Corresponding Moving Patch Extraction at both scales...')
-    config = patchExtraction_Moving_ROI(config)
+    #config = patchExtraction_Moving_ROI(config)
+    
+    config['directories']['SCALED_ROI_DIR_SF8'] = '/data01/shared/skobayashi/github_test/scaled_ROI_SF8'
+    config['directories']['DEST_DIR'] = config['directories']['BASE_DIR']
+    config['directories']['bySampleMeshPatches_ROI']  = '/data01/shared/skobayashi/github_test/extracted_meshPatches_HE_ROI_SF8/bySample_Mesh'
+    config['directories']['meshPREDICTIONS_DIR_ROI_wLA'] = '/data01/shared/skobayashi/github_test/32pixelPatch_Predictions_ROI_wLA_sepDest'
+    config['directories']['meshPREDICTIONS_DIR_ROI'] = '/data01/shared/skobayashi/github_test/32pixelPatch_Predictions_ROI'
+    config['directories']['MESH_MAPS_ROI_DIR'] = '/data01/shared/skobayashi/github_test/meshMaps_ROI'
+    config['directories']['LA_meshMaps_dir']  = '/data01/shared/skobayashi/github_test/meshMaps_ROI_wLA'
+    config['directories']['bySamplePatches_ROI_FIXED_sf8'] = '/data01/shared/skobayashi/github_test/extractedPatches_ROI_FIXED_sf8/bySample'
+    config['directories']['bySamplePatches_ROI_FIXED_sf2'] = '/data01/shared/skobayashi/github_test/extractedPatches_ROI_FIXED_sf2/bySample'
+    
+    
 
     ### Generate Single marker IHC detection masks... Generate IHC counts per patch as well
     print('Generating vis Overlays...')
