@@ -349,19 +349,18 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
     
     finalMerged_df.to_csv(os.path.join(IHC_HE_DEST_DIR,'aggregatedkMeans_IHCCounts_ROI.csv'),index=False)
 
-    ## generate final df with weighted kmeans (normalize counts within each mouse to average uninvovled count for that mouse and eliminate any that have an involved kmeans patch frequency <10% per mouse model)
-    IHC_Markers = ['CD3','CD8b','CD4']
-
-    inv_df = finalMerged_df[finalMerged_df['InvUnInv']=='Inv']
-    conditions = list(set(finalMerged_df['Condition']))
+    #### generate final df with weighted kmeans (normalize counts within each mouse to average uninvovled count for that mouse and eliminate any that have an involved kmeans patch frequency <10% per mouse model)
+    df = pd.read_csv('aggregatedkMeans_IHCCounts_ROIxxx.csv')
+    inv_df = df[df['InvUnInv']=='Inv']
+    conditions = list(set(df['Condition']))
     sampleInfoTracker = {}
-    samples = list(set(finalMerged_df['Sample_x']))
+    samples = list(set(df['Sample_x']))
 
     all_patchClusters_inv = list(set(inv_df['strkMeansCluster']))
 
     for sample in samples:
         sampleInfoTracker[sample] = {}
-        sample_subset = finalMerged_df[finalMerged_df['Sample_x']==sample]
+        sample_subset = df[df['Sample_x']==sample]
         uninv_subset = sample_subset[sample_subset['InvUnInv']=='UnInv']
 
         sampleInfoTracker[sample]['UnInv_averages']={}
@@ -417,8 +416,21 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
         #row['CD8b_avgCorrected'] = float(int(row['CD8b'])/rel_avg_uninvCount_CD8b)
         inv_df.loc[index,'CD3_perMouse_avgCorrected_kMeansWeighted'] = float(int(row['CD3'])/rel_avg_uninvCount_CD3)*sampleInfoTracker[condition][inv_patchClass] 
         inv_df.loc[index,'CD4_perMouse_avgCorrected_kMeansWeighted'] = float(int(row['CD4'])/rel_avg_uninvCount_CD4)*sampleInfoTracker[condition][inv_patchClass] 
-        inv_df.loc[index,'CD8b_perMouse_avgCorrected_kMeansWeighted'] = float(int(row['CD8b'])/rel_avg_uninvCount_CD8b)*sampleInfoTracker[condition][inv_patchClass]         
+        inv_df.loc[index,'CD8b_perMouse_avgCorrected_kMeansWeighted'] = float(int(row['CD8b'])/rel_avg_uninvCount_CD8b)*sampleInfoTracker[condition][inv_patchClass] 
+        
+    inv_df['Condition'] = pd.Categorical(inv_df['Condition'],
+                                categories=['CTRL', 'TAM', 'DSS'],
+                                ordered=True)
+    correctedMarkers = [a for a in inv_df.columns if 'avgCorrected' in a]
 
+    muted    = ["#ff0000", "#008000","#A47449","#8031A7"]
+    newPal   = dict(CTRL = muted[1], TAM = muted[0], DSS = muted[2])
+
+    inv_df['strkMeansCluster'] = pd.Categorical(inv_df['strkMeansCluster'],
+                                    categories=['Inflammatory', 'CryptDropout', 'CryptDilation','DistortedGlands'],
+                                    ordered=True)
+
+    ####
     inv_df.to_csv(os.path.join(IHC_HE_DEST_DIR,'invPatches_IHC_HE_kMeansWeighted.csv'),index=False)
     
     graphs_DEST = os.path.join(IHC_HE_DEST_DIR,'graphs')
