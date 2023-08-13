@@ -1,5 +1,5 @@
 <p align="center">
-<img width="1095" height="1160" src="https://github.com/skobayashi0417/IHC_HE_pipeline/assets/56415777/67fecc75-249f-4ae1-8101-791ae9a1ce11">
+<img width="1160" height="1095" src="https://github.com/skobayashi0417/IHC_HE_pipeline/assets/56415777/67fecc75-249f-4ae1-8101-791ae9a1ce11">
 </p>
 
 # Repository for: Computational immunohistochemical and H&E mapping adds immune context to histological phenotypes in colitis mouse models.
