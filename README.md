@@ -1,7 +1,7 @@
 ![plot](./exampleOverlay/Overlayed_991_colors_enhanced_sf10.png)
 
 <p align="center">
-<img width="460" height="300" src="./exampleOverlay/Overlayed_991_colors_enhanced_sf10_sf4.png">
+<img width="460" height="300" src="https://github.com/skobayashi0417/IHC_HE_pipeline/blob/master/exampleOverlay/Overlayed_991_colors_enhanced_sf10_sf4.tif">
 </p>
 
 # Repository for: Computational immunohistochemical and H&E mapping adds immune context to histological phenotypes in colitis mouse models.
