@@ -251,7 +251,7 @@ def generate_kMeansweighted_mouseConditions_graph(graphs_DEST,inv_df):
 
 def IHC_HE_aggregatedDF_graphs_generation(config):
 
-    IHC_HE_DEST_DIR = os.path.join(config['directories']['BASE_DIR'],'IHC_HE_aggDFs_andGraphs')
+    IHC_HE_DEST_DIR = os.path.join(config['directories']['INV_UNV_wIHC_BASE_DIR_ROI'],'IHC_HE_aggDFs_andGraphs')
     if not os.path.exists(IHC_HE_DEST_DIR):
         os.mkdir(IHC_HE_DEST_DIR)
 
