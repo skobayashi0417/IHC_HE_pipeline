@@ -1,4 +1,4 @@
-![plot](./exampleOverlay/Overlayed_991_colors_enhanced_sf10.png)
+![plot](./exampleOverlay/Overlayed_991_colors_enhanced_sf10_sf2.png)
 
 # Repository for: Computational immunohistochemical and H&E mapping adds immune context to histological phenotypes in colitis mouse models.
 
