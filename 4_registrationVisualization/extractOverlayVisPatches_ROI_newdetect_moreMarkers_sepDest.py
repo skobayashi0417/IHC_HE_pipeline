@@ -22,7 +22,7 @@ def extract_OverlayVisPatches_ROI_newDetect_moreMarkers(config):
     BASE_DIR = config['directories']['BASE_DIR']
     GEN_DEST_DIR = config['directories']['DEST_DIR']
 
-    DEST_DIR = os.path.join(GEN_DEST_DIR,'extractedPatches_byMarker_fromVisOverlays_ROI_newDetect_LAbgMusclefiltering')
+    DEST_DIR = os.path.join(GEN_DEST_DIR,'extractedPatches_byMarker_fromregistrationIHCVisOverlays_ROI')
     if not os.path.exists(DEST_DIR):
         os.mkdir(DEST_DIR)
     

@@ -15,10 +15,7 @@ def prepare_directories(config):
 
 
 def runPipeline_part1(config):
-    
-    good_qual_reg_samples = ['980']
-    bad_qual_reg_samples = ['24']
-    
+
     # extract ROI from samples with bad registration quality
     print('registering ROI from bad registration quality samples...')
     config = registerWSIs_preROI(config)

@@ -297,7 +297,7 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
         ROI_Tracker[sampleNum] = ROINum
 
     # gather Kmeans data across mice into aggregate df
-    kMeans_dir = 'kMeansCSVs_ROI_selected'
+    kMeans_dir = config['directories']['KMEANS_OUTPUT_ROI_DIR']
     
     kMeans_csvs = [c for c in os.listdir(kMeans_dir) if c.endswith('.csv')]
     

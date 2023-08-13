@@ -599,17 +599,17 @@ def overlayVisualization_multiTarget_ROI_newDetect_moreMarkers_sepDest_notbetror
     MOVING_DIR = os.path.join(os.path.join(BASE_DIR,'extractedPatches_ROI_SF2_MOVING'),'bySample')
     
     # define destination dir for overlays
-    gen_dest_dir = os.path.join(DEST_DIR,'registrationOverlays_ROI_newDetect_moreMarkers_notbetrorgt_filterLA')
+    gen_dest_dir = os.path.join(DEST_DIR,'registrationIHCVisOverlays_ROI')
     if not os.path.exists(gen_dest_dir):
         os.mkdir(gen_dest_dir)
         
     # save renamed IHC patches with count and stain positivty area percent info in fiename
-    MOVING_renamed_dir = os.path.join(DEST_DIR,'extractedPatches_ROI_SF2_MOVING_renamed_newDetect_moreMarkers_notbetrorgt_filterLA')
+    MOVING_renamed_dir = os.path.join(DEST_DIR,'extractedPatches_ROI_SF2_MOVING_renamed_wDetectionCountsinfo')
     if not os.path.exists(MOVING_renamed_dir):
         os.mkdir(MOVING_renamed_dir)
 
     # Where to save IHC counts info
-    countCSVs_dir = os.path.join(DEST_DIR,'countCSVs_ROI_newDetect_moreMarkers_notbetrorgt_filterLA')
+    countCSVs_dir = os.path.join(DEST_DIR,'IHCcountCSVs_ROI')
     if not os.path.exists(countCSVs_dir):
         os.mkdir(countCSVs_dir)
     

@@ -160,7 +160,7 @@ def perform_Meshpredictions_ROI_wLA_sepDest(config):
     testSource = config['directories']['bySampleMeshPatches_ROI']
     GEN_DEST_DIR = config['directories']['DEST_DIR']
     
-    MESH_PREDICTIONS_DIR = os.path.join(GEN_DEST_DIR,'32pixelPatch_Predictions_ROI_wLA_sepDest')
+    MESH_PREDICTIONS_DIR = os.path.join(GEN_DEST_DIR,'meshPatch_Predictions_ROI_wLA_sepDest')
     if not os.path.exists(MESH_PREDICTIONS_DIR):
         os.mkdir(MESH_PREDICTIONS_DIR)
         

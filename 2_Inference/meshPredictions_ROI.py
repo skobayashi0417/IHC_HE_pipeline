@@ -159,7 +159,7 @@ def perform_Meshpredictions_ROI(config):
     PATCH_SIZE = config['PatchInfo']['meshPATCH_SIZE']
     testSource = config['directories']['bySampleMeshPatches_ROI']
     
-    MESH_PREDICTIONS_DIR = os.path.join(BASE_DIR,'32pixelPatch_Predictions_ROI')
+    MESH_PREDICTIONS_DIR = os.path.join(BASE_DIR,'meshPatch_Predictions_ROI')
     if not os.path.exists(MESH_PREDICTIONS_DIR):
         os.mkdir(MESH_PREDICTIONS_DIR)
         

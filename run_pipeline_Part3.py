@@ -68,32 +68,32 @@ def runPipeline(config):
     
     config['directories']['INVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/involved_ROI_patch_RN_FeatureExtraction'
     config['directories']['UNINVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/UNinvolved_ROI_patch_RN_FeatureExtraction'
-    
+    config['directories']['KMEANS_OUTPUT_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/kMeans_Outputs_ROI'
     ### Perform PCA
     print('Conducting PCA on Involved Patches...')
-    config = performPCA_ROI(config, 'Involved')
+    #config = performPCA_ROI(config, 'Involved')
     
     print('Conducting PCA on UNinvolved Patches...')
-    config = performPCA_ROI(config, 'Uninvolved')
+    #config = performPCA_ROI(config, 'Uninvolved')
 
     ### Perform kMeans
     print('performing kMeans on Involved Patches...')
-    config = kMeansPCA_ROI(config, 'Involved')
+    #config = kMeansPCA_ROI(config, 'Involved')
     
     print('performing kMeans on UNinvolved Patches...')
-    config = kMeansPCA_ROI(config, 'Uninvolved')
+    #config = kMeansPCA_ROI(config, 'Uninvolved')
 
     ### Merge InvolvedUninvolved Counts
     print('Merging Involved and Uninvolved Counts...')
-    config = mergeCounts_ROI(config)
+    #config = mergeCounts_ROI(config)
 
     ### Generate Proportions
     print('Generating Uninvolved and Involved k-mean Class Proportions...')
-    config = generateProps_ROI(config)
+    #config = generateProps_ROI(config)
         
     ### Perform Mouse Model Inference
     print('Performing LDA mouse model inference...')
-    config = LDA_infer_ROI(config)
+    #config = LDA_infer_ROI(config)
         
     ### Sort kMeans Clusters to Visualize
     print('Sorting kMeans Clusters...')
