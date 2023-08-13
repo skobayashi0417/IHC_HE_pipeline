@@ -361,7 +361,7 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
 
     for sample in samples:
         sampleInfoTracker[sample] = {}
-        sample_subset = dfinalMerged_dff[finalMerged_df['Sample_x']==sample]
+        sample_subset = finalMerged_df[finalMerged_df['Sample_x']==sample]
         uninv_subset = sample_subset[sample_subset['InvUnInv']=='UnInv']
 
         sampleInfoTracker[sample]['UnInv_averages']={}
