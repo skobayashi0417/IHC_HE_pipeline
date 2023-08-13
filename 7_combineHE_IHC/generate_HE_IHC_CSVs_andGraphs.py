@@ -355,7 +355,7 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
     inv_df = finalMerged_df[finalMerged_df['InvUnInv']=='Inv']
     conditions = list(set(finalMerged_df['Condition']))
     sampleInfoTracker = {}
-    samples = list(set(df['Sample_x']))
+    samples = list(set(finalMerged_df['Sample_x']))
 
     all_patchClusters_inv = list(set(inv_df['strkMeansCluster']))
 
