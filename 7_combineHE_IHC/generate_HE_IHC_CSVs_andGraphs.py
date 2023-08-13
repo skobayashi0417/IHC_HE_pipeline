@@ -355,7 +355,7 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
     conditions = list(set(df['Condition']))
     sampleInfoTracker = {}
     samples = list(set(df['Sample_x']))
-
+    IHC_Markers = ['CD3','CD8b','CD4']
     all_patchClusters_inv = list(set(inv_df['strkMeansCluster']))
 
     for sample in samples:
