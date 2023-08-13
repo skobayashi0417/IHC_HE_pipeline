@@ -350,7 +350,7 @@ def IHC_HE_aggregatedDF_graphs_generation(config):
     finalMerged_df.to_csv(os.path.join(IHC_HE_DEST_DIR,'aggregatedkMeans_IHCCounts_ROI.csv'),index=False)
 
     #### generate final df with weighted kmeans (normalize counts within each mouse to average uninvovled count for that mouse and eliminate any that have an involved kmeans patch frequency <10% per mouse model)
-    df = pd.read_csv('aggregatedkMeans_IHCCounts_ROIxxx.csv')
+    df = pd.read_csv(os.path.join(IHC_HE_DEST_DIR,'aggregatedkMeans_IHCCounts_ROI.csv'),index=False)
     inv_df = df[df['InvUnInv']=='Inv']
     conditions = list(set(df['Condition']))
     sampleInfoTracker = {}
