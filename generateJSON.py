@@ -9,7 +9,7 @@ def generate_JSON():
     data['PatchInfo'] = {}
 
     data['directories']['ROI_INPUT_DIR'] = '/data01/shared/skobayashi/ROI_tifs'
-    data['directories']['BASE_DIR'] = '/data01/shared/skobayashi/github_test/'
+    data['directories']['BASE_DIR'] = '/data05/shared/skobayashi/github_test/'
 
     data['SlideInfo']['WSI_EXTENSION'] = '.tif'
     data['SlideInfo']['SCALE_FACTOR'] = 2

@@ -22,7 +22,7 @@ from combine_HE_IHC_Outputs_ROI import *
 from generate_HE_IHC_CSVs_andGraphs import *
 
 def prepare_directories(config):
-    INV_UNV_wIHC_BASE_DIR = os.path.join(config['directories']['BASE_DIR'],'INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI')
+    INV_UNV_wIHC_BASE_DIR = os.path.join(config['directories']['BASE_DIR'],'Part3_outputs')
     if not os.path.exists(INV_UNV_wIHC_BASE_DIR):
         os.mkdir(INV_UNV_wIHC_BASE_DIR)
     
@@ -33,73 +33,58 @@ def prepare_directories(config):
 def runPipeline(config):
     ## extract HE overlap patches at sf8
     print('Extracting overlapping patches...')
-    #config = extract_overlapPatches_ROI(config)
+    config = extract_overlapPatches_ROI(config)
     
     ## perform HE sf8 Involved versus Uninvolved predictions
     print('Performing Involved versus Uninvolved predictions...')
-    #config = perform_predictions_ROI(config)
+    config = perform_predictions_ROI(config)
     
     ## Generate HE SF8 ProbMaps
     print('Generating Prob Maps...')
-    #config = generateProbMaps_ROI(config)
+    config = generateProbMaps_ROI(config)
 
     ### Gather Involved and Uninvolved Patches...
     print('Gathering Involved and Uninvolved Patches...')
-    #config = mergeMice_ROI(config)
+    config = mergeMice_ROI(config)
 
     ### Perform RN Feature Extraction
     print('Performing RN Feature Extraction on Involved Patches...')
-    #config = RN_FeatureExtraction_ROI(config, 'Involved')
+    config = RN_FeatureExtraction_ROI(config, 'Involved')
      
     print('Performing RN Feature Extraction on UNinvolved Patches...')
-    #config = RN_FeatureExtraction_ROI(config, 'Uninvolved')
-    
-    config['directories']['extractedPatches_HE_sf8_wOverlaps_ROI'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/extractedPatches_HE_sf8_wOverlaps_ROI/bySample'
-    
-    config['directories']['PREDICTIONS_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/predictions_wOverlaps_ROI'
-     
-    config['directories']['bySample_ROI_probmaps'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI/bySample'
-     
-    config['directories']['probMaps_masks_ROI_base_dir'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI'
-     
-    config['directories']['INVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/involvedPatches_ROI_wOverlaps'
-    config['directories']['UNINVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/UNinvolvedPatches_ROI_wOverlaps'
-    config['directories']['GEN_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/'
-    
-    config['directories']['INVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/involved_ROI_patch_RN_FeatureExtraction'
-    config['directories']['UNINVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/UNinvolved_ROI_patch_RN_FeatureExtraction'
-    config['directories']['KMEANS_OUTPUT_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/kMeans_Outputs_ROI'
+    config = RN_FeatureExtraction_ROI(config, 'Uninvolved')
+
     ### Perform PCA
     print('Conducting PCA on Involved Patches...')
-    #config = performPCA_ROI(config, 'Involved')
+    config = performPCA_ROI(config, 'Involved')
     
     print('Conducting PCA on UNinvolved Patches...')
-    #config = performPCA_ROI(config, 'Uninvolved')
+    config = performPCA_ROI(config, 'Uninvolved')
 
     ### Perform kMeans
     print('performing kMeans on Involved Patches...')
-    #config = kMeansPCA_ROI(config, 'Involved')
+    config = kMeansPCA_ROI(config, 'Involved')
     
     print('performing kMeans on UNinvolved Patches...')
-    #config = kMeansPCA_ROI(config, 'Uninvolved')
+    config = kMeansPCA_ROI(config, 'Uninvolved')
 
     ### Merge InvolvedUninvolved Counts
     print('Merging Involved and Uninvolved Counts...')
-    #config = mergeCounts_ROI(config)
+    config = mergeCounts_ROI(config)
 
     ### Generate Proportions
     print('Generating Uninvolved and Involved k-mean Class Proportions...')
-    #config = generateProps_ROI(config)
+    config = generateProps_ROI(config)
         
     ### Perform Mouse Model Inference
     print('Performing LDA mouse model inference...')
-    #config = LDA_infer_ROI(config)
+    config = LDA_infer_ROI(config)
         
     ### Sort kMeans Clusters to Visualize
     print('Sorting kMeans Clusters...')
-    #sortClusters(config)
+    sortClusters(config)
     
-     ### Generate IHC HE agg DFs and graphs
+    ### Generate IHC HE agg DFs and graphs
     print('Generating IHC HE agg dataframes and graph Outputs...')
     IHC_HE_aggregatedDF_graphs_generation(config)
     
