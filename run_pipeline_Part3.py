@@ -56,13 +56,13 @@ def runPipeline(config):
     
     config['directories']['extractedPatches_HE_sf8_wOverlaps_ROI'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/extractedPatches_HE_sf8_wOverlaps_ROI/bySample'
     
-     config['directories']['PREDICTIONS_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/predictions_wOverlaps_ROI'
+    config['directories']['PREDICTIONS_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/predictions_wOverlaps_ROI'
      
-     config['directories']['bySample_ROI_probmaps'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI/bySample'
+    config['directories']['bySample_ROI_probmaps'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI/bySample'
      
-     config['directories']['probMaps_masks_ROI_base_dir'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI'
+    config['directories']['probMaps_masks_ROI_base_dir'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI'
      
-     config['directories']['INVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/involvedPatches_ROI_wOverlaps'
+    config['directories']['INVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/involvedPatches_ROI_wOverlaps'
     config['directories']['UNINVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/UNinvolvedPatches_ROI_wOverlaps'
     config['directories']['GEN_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/'
     
