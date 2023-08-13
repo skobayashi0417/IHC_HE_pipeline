@@ -33,26 +33,41 @@ def prepare_directories(config):
 def runPipeline(config):
     ## extract HE overlap patches at sf8
     print('Extracting overlapping patches...')
-    config = extract_overlapPatches_ROI(config)
+    #config = extract_overlapPatches_ROI(config)
     
     ## perform HE sf8 Involved versus Uninvolved predictions
     print('Performing Involved versus Uninvolved predictions...')
-    config = perform_predictions_ROI(config)
+    #config = perform_predictions_ROI(config)
     
     ## Generate HE SF8 ProbMaps
     print('Generating Prob Maps...')
-    config = generateProbMaps_ROI(config)
+    #config = generateProbMaps_ROI(config)
 
     ### Gather Involved and Uninvolved Patches...
     print('Gathering Involved and Uninvolved Patches...')
-    config = mergeMice_ROI(config)
+    #config = mergeMice_ROI(config)
 
     ### Perform RN Feature Extraction
     print('Performing RN Feature Extraction on Involved Patches...')
-    config = RN_FeatureExtraction_ROI(config, 'Involved')
+    #config = RN_FeatureExtraction_ROI(config, 'Involved')
      
     print('Performing RN Feature Extraction on UNinvolved Patches...')
-    config = RN_FeatureExtraction_ROI(config, 'Uninvolved')
+    #config = RN_FeatureExtraction_ROI(config, 'Uninvolved')
+    
+    config['directories']['extractedPatches_HE_sf8_wOverlaps_ROI'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/extractedPatches_HE_sf8_wOverlaps_ROI/bySample'
+    
+     config['directories']['PREDICTIONS_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/predictions_wOverlaps_ROI'
+     
+     config['directories']['bySample_ROI_probmaps'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI/bySample'
+     
+     config['directories']['probMaps_masks_ROI_base_dir'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/probMapsandMasks_ROI'
+     
+     config['directories']['INVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/involvedPatches_ROI_wOverlaps'
+    config['directories']['UNINVOLVED_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/UNinvolvedPatches_ROI_wOverlaps'
+    config['directories']['GEN_PATCHES_ROI_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/Involved_UninvolvedPatches_ROI/'
+    
+    config['directories']['INVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/involved_ROI_patch_RN_FeatureExtraction'
+    config['directories']['UNINVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR'] = '/data01/shared/skobayashi/github_test/INV_UNV_wIHC_Outputs_wUNINVkmeans_ROI/UNinvolved_ROI_patch_RN_FeatureExtraction'
     
     ### Perform PCA
     print('Conducting PCA on Involved Patches...')
