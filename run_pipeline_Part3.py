@@ -50,7 +50,7 @@ def runPipeline(config):
     ### Perform RN Feature Extraction
     print('Performing RN Feature Extraction on Involved Patches...')
     config = RN_FeatureExtraction_ROI(config, 'Involved')
-    
+     
     print('Performing RN Feature Extraction on UNinvolved Patches...')
     config = RN_FeatureExtraction_ROI(config, 'Uninvolved')
     

@@ -48,17 +48,18 @@ def performPCA_ROI(config,patchType):
         RN_FEATURES_DIR = config['directories']['INVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR']
         
         # Path to archived mouse cohort to fit PCA on
-        #PCA_TRAIN_CSV = './7_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/involved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
-        PCA_TRAIN_CSV = './6_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/involved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
+        #PCA_TRAIN_CSV = './6_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/involved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
         PCA_OPT_NUM_COMPONENTS = 250 ## determined on archived mouse cohort
+        PCA_TRAIN_CSV = '/home/skobayashi/pipelineFullInference/Inv_Unv_fullPipeline/6_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/involved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
     
     elif patchType == 'Uninvolved':
         RN_FEATURES_DIR = config['directories']['UNINVOLVED_ROI_RN_EXTRACTED_FEATURES_DIR']
         
         # Path to archived mouse cohort to fit PCA on
         #PCA_TRAIN_CSV = './7_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/involved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
-        PCA_TRAIN_CSV = './6_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/UNinvolved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
+        #PCA_TRAIN_CSV = './6_mouseModelInference/archivedMouseCohort_InvolvedPatches_RN_extracted_features/UNinvolved_wOverlap_RN_extractedFeatures_archivedMouseCohort.csv'
         PCA_OPT_NUM_COMPONENTS = 255 ## determined on archived mouse cohort
+        PCA_TRAIN_CSV = '/data06/shared/skobayashi/kMeansonlyHealthy_RN34_Outputs_single/UNinvolved_patch_RN_FeatureExtraction/UNinvolved_wOverlap_RN_extractedFeatures.csv'
     
     scaler = MinMaxScaler()
     scaler_test = MinMaxScaler()
