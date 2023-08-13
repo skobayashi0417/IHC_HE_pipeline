@@ -132,7 +132,7 @@ def generate_invUnv_graph(graphs_DEST,finalMerged_df):
         for state in InvUnInv:
             countTracker_forStats[IHC_Marker][state] = {}
 
-            stateSubset = df[df['InvUnInv']==state]
+            stateSubset = finalMerged_df[finalMerged_df['InvUnInv']==state]
 
             for condition in CONDITIONS:
                 condSubset = stateSubset[stateSubset['Condition']==condition]
@@ -140,7 +140,7 @@ def generate_invUnv_graph(graphs_DEST,finalMerged_df):
         
         for condition in CONDITIONS:
             countTracker_forStats_withinConditions[condition][IHC_Marker] = {}
-            conditionSubset = df[df['Condition']==condition]
+            conditionSubset = finalMerged_df[finalMerged_df['Condition']==condition]
 
             for state in InvUnInv:
                 stateSubset = conditionSubset[conditionSubset['InvUnInv']==state]
