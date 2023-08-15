@@ -19,7 +19,6 @@ def extractPatches_byCoord(WSI, coords, PATCH_SIZE, target_dest_dir):
             
 def extract_OverlayVisPatches_ROI_newDetect_moreMarkers(config):
     extractedPatches_DIR = config['directories']['bySamplePatches_ROI_FIXED_sf2']
-    BASE_DIR = config['directories']['BASE_DIR']
     GEN_DEST_DIR = config['directories']['DEST_DIR']
 
     DEST_DIR = os.path.join(GEN_DEST_DIR,'extractedPatches_byMarker_fromregistrationIHCVisOverlays_ROI')

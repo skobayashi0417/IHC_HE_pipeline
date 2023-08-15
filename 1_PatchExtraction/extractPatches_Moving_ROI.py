@@ -45,7 +45,7 @@ def extractPatches(im, WSI,coords, PATCH_SIZE, sampleDir, WSI_EXTENSION,IHC_targ
 def patchExtraction_Moving_ROI(config):
     Image.MAX_IMAGE_PIXELS = None
     
-    BASE_DIR = config['directories']['BASE_DIR']
+    BASE_DIR = config['directories']['DEST_DIR']
     PATCH_SIZE_SF8 = config['PatchInfo']['PATCH_SIZE_SF8']
     PATCH_SIZE_SF2 = config['PatchInfo']['PATCH_SIZE_SF2']
     WSI_EXTENSION = config['SlideInfo']['WSI_EXTENSION']

@@ -60,7 +60,7 @@ def return_Ycoord(fn):
     return Ycoord
 
 def createMeshMaps_ROI(config):
-    BASE_DIR = config['directories']['BASE_DIR']
+    BASE_DIR = config['directories']['DEST_DIR']
     ROI_DIR = config['directories']['SCALED_ROI_DIR_SF8']
     MESH_PREDICTIONS_DIR = config['directories']['meshPREDICTIONS_DIR_ROI']
     PATCH_SIZE = config['PatchInfo']['meshPATCH_SIZE']

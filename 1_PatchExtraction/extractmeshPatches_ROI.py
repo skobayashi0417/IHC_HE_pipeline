@@ -20,7 +20,7 @@ def extractPatches(im, possibleCoords, PATCH_SIZE, sampleDir, WSI, WSI_EXTENSION
 def meshpatchExtraction_ROI(config):
     Image.MAX_IMAGE_PIXELS = None
     
-    BASE_DIR = config['directories']['BASE_DIR']
+    BASE_DIR = config['directories']['DEST_DIR']
     PATCH_SIZE = config['PatchInfo']['meshPATCH_SIZE']
     WSI_EXTENSION = config['SlideInfo']['WSI_EXTENSION']
     SCALED_ROI_DIR = config['directories']['SCALED_ROI_DIR_SF8']

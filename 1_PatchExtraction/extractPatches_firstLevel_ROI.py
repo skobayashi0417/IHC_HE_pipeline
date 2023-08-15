@@ -22,7 +22,7 @@ def extractPatches(os_WSI, WSI, coords, PATCH_SIZE, sample_dest_dir, WSI_EXTENSI
 def patchExtraction_firstLevel_ROI(config):
     Image.MAX_IMAGE_PIXELS = None
     
-    BASE_DIR = config['directories']['BASE_DIR']
+    BASE_DIR = config['directories']['DEST_DIR']
     PATCH_SIZE = config['PatchInfo']['PATCH_SIZE_SF2']
     WSI_EXTENSION = config['SlideInfo']['WSI_EXTENSION']
     SECOND_LEVEL_PATCHES_DIR = config['directories']['bySamplePatches_ROI_FIXED_sf8']

@@ -154,7 +154,7 @@ def perform_Meshpredictions_ROI(config):
     global sample
     global device
     
-    BASE_DIR = config['directories']['BASE_DIR']
+    BASE_DIR = config['directories']['DEST_DIR']
     DEVICE = config['DEVICE']
     PATCH_SIZE = config['PatchInfo']['meshPATCH_SIZE']
     testSource = config['directories']['bySampleMeshPatches_ROI']

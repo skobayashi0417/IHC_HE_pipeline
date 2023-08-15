@@ -22,9 +22,9 @@ def extract_sampleID(fn):
     return sampleID
 
 def sortClusters(config):
-    kMeansDir = config['directories']['KMEANS_OUTPUT_DIR']
-    src_dir = config['directories']['INVOLVED_PATCHES_DIR']
-    src_dir_UNinvolved = config['directories']['UNINVOLVED_PATCHES_DIR']
+    kMeansDir = config['directories']['KMEANS_OUTPUT_ROI_DIR']
+    src_dir = config['directories']['INVOLVED_PATCHES_ROI_DIR']
+    src_dir_UNinvolved = config['directories']['UNINVOLVED_PATCHES_ROI_DIR']
 
     kMeans_CSVs = [c for c in os.listdir(kMeansDir) if c.endswith('test.csv')]
     
